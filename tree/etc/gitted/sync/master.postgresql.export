@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Export script for gitted /repository.local.git, branch "master"
+#
+# This script is responsible for making Git commits and updating branch refs
+# to reflect the new state of the system, if that has changed.
+#
+
+GITTED_DATA_PATH=postgresql \
+    GITTED_POSTGRESQL_DATABASE=postgresql \
+    /usr/share/gitted/export/postgresql
