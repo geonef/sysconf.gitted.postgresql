@@ -9,7 +9,7 @@ for easy install, backup and sync.
 
 Once applied, a PostgreSQL should be running on the system.
 ```
-\# netstat -tlpn
+# netstat -tlpn
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      29057/postgres  
