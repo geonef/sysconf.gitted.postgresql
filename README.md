@@ -7,8 +7,11 @@ for easy install, backup and sync.
 
 ## PostgreSQL service
 
-Once applied, a PostgreSQL should be running on the system:
+Once applied, a PostgreSQL should be running on the system.
 ```
+\# netstat -tlpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      29057/postgres  
 tcp6       0      0 :::5432                 :::*                    LISTEN      29057/postgres  
 ```
