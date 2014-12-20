@@ -6,6 +6,10 @@
 # the new state of the Git branch.
 #
 
-GITTED_DATA_PATH=postgresql \
-    GITTED_POSTGRESQL_DATABASE=postgresql \
+export GITTED_POSTGRESQL_DATA_PATH=postgresql
+export GITTED_POSTGRESQL_DATABASE=postgresql
+
+[ -r /etc/gitted/sync/defs ] && . /etc/gitted/sync/defs
+
+GITTED_DATA_PATH=$GITTED_POSTGRESQL_DATA_PATH \
     /usr/share/gitted/import/postgresql
