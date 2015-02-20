@@ -16,15 +16,16 @@ _packages=
 _packages="$_packages postgresql-${SYSCONF_GITTED_POSTGRESQL_VERSION}"
 sysconf_require_packages $_packages
 
-
-for file in postgresql.conf environment; do
-    local _pg_config=/etc/postgresql/${SYSCONF_GITTED_POSTGRESQL_VERSION}/main/$file
-    if [ ! -h $_pg_config ]; then
-        rm -f $_pg_config
-        echo "Setting symlink for: $_pg_config"
-        ln -s ../../../postgresql-common/$file $_pg_config
-    fi
-done
+if [ "$SYSCONF_GITTED_POSTGRESQL_WITH_COMMON_CONFIG" = yes ]; then
+    for file in postgresql.conf environment; do
+        local _pg_config=/etc/postgresql/${SYSCONF_GITTED_POSTGRESQL_VERSION}/main/$file
+        if [ ! -h $_pg_config ]; then
+            rm -f $_pg_config
+            echo "Setting symlink for: $_pg_config"
+            ln -s ../../../postgresql-common/$file $_pg_config
+        fi
+    done
+fi
 
 nef_log "Restarting postgresql ${SYSCONF_GITTED_POSTGRESQL_VERSION} ..."
 service postgresql restart

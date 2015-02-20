@@ -1,8 +1,11 @@
 # Environment for sysconf "sysconf.gitted.postgresql"  -*- shell-script -*-
 
-# Careful with the version: you need to update:
+
+# If set to "yes" and use another version, you need to provide
 # tree/etc/postgresql-common/postgresql.conf.d/gitted.postgresql.conf
-# as well.
+# as ours is matches 9.4.
+SYSCONF_GITTED_POSTGRESQL_WITH_COMMON_CONFIG=yes
+
 SYSCONF_GITTED_POSTGRESQL_VERSION=9.4
 
 SYSCONF_GITTED_POSTGRESQL_DATABASE=postgresql
